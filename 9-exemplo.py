@@ -1,38 +1,35 @@
 import os
-os.system('cls')
+os.system("cls")
 
-feijao_da_vovo = 150
-acai = 20
-Xbanana = 2.50
-churros = 999
-hakuna_matata = 6767
+total = 0
+continuar = "s"
 
-while True:
-    print('''
-====== SENAI SHOP ======
-1 - feijão da vovó R$ 150
-2 - Açai R$ 20
-3 - xbanana R$ 2,50
-4 - CHURROS R$ 999
-5 - hakuna matata R$ 6767''')
-    numero = input("Escolha o número do produto: ")
-    if numero == "1":
-        print(f"Opção escolhida, feijãodavovó R${feijao_da_vovo}")
-        break
-    elif numero == "2":
-        print(f"opção escolhida, açai R${acai}")
-        break
-    elif numero == "3":
-        print(f"opção escolhida, Xbanana R${Xbanana}")
-        break
-    elif numero == "4":
-        print(f"opção escolhida, churros R${churros}")
-        break
-    elif numero == "5":
-        print(f"opção escolhida, hakuna matata R${hakuna_matata}")
-        break
+while continuar == "s":
+    print("\n===== CARDÁPIO =====")
+    print("1 - Picanha - R$ 25,00")
+    print("2 - Lasanha - R$ 20,00")
+    print("3 - Strogonoff - R$ 18,00")
+    print("4 - Bife Acebolado - R$ 15,00")
+    print("5 - Pão com ovo - R$ 5,00")
+
+    codigo = int(input("Escolha o código do prato: "))
+
+    if codigo == 1:
+        total += 25
+    elif codigo == 2:
+        total += 20
+    elif codigo == 3:
+        total += 18
+    elif codigo == 4:
+        total += 15
+    elif codigo == 5:
+        total += 5
     else:
-        print(f"Não vendemos esse produto")
-        print("tente novamente")
-        input("Pressione para continuar..")
-        os.system("cls")
+        print("Código inválido!")
+
+    if codigo >= 1 and codigo <= 5:
+        print("Total parcial: R$", total)
+
+    continuar = input("Deseja escolher outro prato? (s/n): ").lower()
+
+print("Valor total a pagar: R$", total)
